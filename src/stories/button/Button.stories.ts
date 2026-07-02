@@ -6,20 +6,24 @@ import { Button } from "./Button";
 const meta = {
   title: "Example/Button",
   component: Button,
+  // parameters: {
+  //   // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
+  //   layout: "fullscreen",
+  // },
   args: {
-    children: 'Button',
+    children: "Button",
     variant: "primary",
     size: "medium",
-    disabled: false
+    disabled: false,
   },
   argTypes: {
     disabled: {
-      control: 'boolean'
+      control: "boolean",
     },
     size: {
-      control: 'select'
-    }
-  }
+      control: "select",
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -28,38 +32,38 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    variant: 'primary',
+    variant: "primary",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
+    variant: "secondary",
   },
 };
 
 export const Destructive: Story = {
   args: {
-    variant: 'destructive'
-  }
-}
+    variant: "destructive",
+  },
+};
 
 export const Small: Story = {
   args: {
-    size: "small"
-  }
-}
+    size: "small",
+  },
+};
 
 export const Large: Story = {
   args: {
-    size: "large"
-  }
-}
+    size: "large",
+  },
+};
 
 export const Dark: Story = {
   parameters: {
     themes: {
-      themeOverride: "dark"
-    }
-  }
-}
+      themeOverride: "dark",
+    },
+  },
+};
