@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *));
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
