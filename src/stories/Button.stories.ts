@@ -8,11 +8,16 @@ const meta = {
   component: Button,
   args: {
     children: 'Button',
+    variant: "primary",
+    size: "medium",
     disabled: false
   },
   argTypes: {
     disabled: {
       control: 'boolean'
+    },
+    size: {
+      control: 'select'
     }
   }
 } satisfies Meta<typeof Button>;
@@ -36,5 +41,17 @@ export const Secondary: Story = {
 export const Destructive: Story = {
   args: {
     variant: 'destructive'
+  }
+}
+
+export const Small: Story = {
+  args: {
+    size: "small"
+  }
+}
+
+export const Large: Story = {
+  args: {
+    size: "large"
   }
 }
