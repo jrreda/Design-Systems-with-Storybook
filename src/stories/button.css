@@ -1,30 +1,94 @@
-.storybook-button {
-  display: inline-block;
-  cursor: pointer;
-  border: 0;
-  border-radius: 3em;
-  font-weight: 700;
-  line-height: 1;
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.button {
+  @apply inline-flex items-center gap-1.5 bg-primary-600 shadow-sm px-2.5 py-1.5 border border-transparent rounded text-white transition-colors cursor-pointer;
 }
-.storybook-button--primary {
-  background-color: #555ab9;
+
+/* Focus visible styles */
+.button:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+/* Disabled styles */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: #9967d5;
+}
+
+.button:active {
+  background-color: #bc9be5;
+}
+
+/* Variant: secondary */
+.secondary {
+  background-color: white;
+  color: #343a46;
+  border-color: #b1bbc8;
+}
+
+.secondary:hover {
+  background-color: #f6f7f9;
+}
+
+.secondary:active {
+  background-color: #eceef2;
+}
+
+/* Variant: destructive */
+.destructive {
+  background-color: #d9253e;
   color: white;
+  border-color: transparent;
 }
-.storybook-button--secondary {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+.destructive:hover {
+  background-color: #ed4656;
+}
+
+.destructive:active {
+  background-color: #f6767f;
+}
+
+/* Variant: ghost */
+.ghost {
   background-color: transparent;
-  color: #333;
+  color: #343a46;
+  border-color: transparent;
+  box-shadow: none;
 }
-.storybook-button--small {
-  padding: 10px 16px;
-  font-size: 12px;
+
+.ghost:hover {
+  background-color: #f6f7f9;
 }
-.storybook-button--medium {
-  padding: 11px 20px;
-  font-size: 14px;
+
+.ghost:active {
+  background-color: #eceef2;
 }
-.storybook-button--large {
-  padding: 12px 24px;
-  font-size: 16px;
+
+/* Sizes */
+.small {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.medium {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.625rem;
+}
+
+.large {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Icon positions */
+.icon-left {
+  flex-direction: row;
+}
+
+.icon-right {
+  flex-direction: row-reverse;
 }
