@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "./input";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Input } from "./Input";
 
 const meta = {
-  title: "Components/Input",
+  title: "Example/Input",
   component: Input,
   args: {
     label: "Input",
@@ -42,7 +42,14 @@ const meta = {
       },
     },
   },
-} as Meta<typeof Input>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof Input>;
+
+
+export const Default: Story = {
+  args: {
+    label: "Input Label"
+  },
+};
