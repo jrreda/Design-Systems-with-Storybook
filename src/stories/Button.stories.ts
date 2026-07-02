@@ -55,3 +55,11 @@ export const Large: Story = {
     size: "large"
   }
 }
+
+export const Dark: Story = {
+  parameters: {
+    themes: {
+      themeOverride: "dark"
+    }
+  }
+}
