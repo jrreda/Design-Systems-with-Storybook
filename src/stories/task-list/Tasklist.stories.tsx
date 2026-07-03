@@ -6,14 +6,16 @@ import { TaskList } from "./TaskList";
 const meta = {
   title: "Example/TaskList",
   component: TaskList,
+  loaders: [
+    async () => {
+      const tasks = await fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json());
+      return { tasks }
+    }
+  ],
   decorators: [
     (Story, context) => {
       return (
-        <TaskListProvider tasks={[
-          { id: '1', title: 'Task 1', completed: false },
-          { id: '2', title: 'Task 2', completed: true },
-          { id: '3', title: 'Task 3', completed: false },
-        ]}>
+        <TaskListProvider tasks={context.loaded.tasks}>
           <Story {...context} />
         </TaskListProvider>
       );
